@@ -2,7 +2,7 @@
 
 **Epic:** A — Scaffold · **Branch:** `feat/a-scaffold` · **Depends on:** A2
 
-> Read `docs/APPROACH.md` + `docs/tickets/README.md` first.
+> Read `.llm/plan.md` for architectural context if needed.
 
 ## Goal
 Lint + format the codebase with ESLint 9 **flat config** and Prettier, integrated so they don't
@@ -38,4 +38,4 @@ npm run format:check
 ```
 
 ## On completion
-Append A3 entry to `docs/APPROACH.md` §6. Commit: `A3: ESLint 9 flat config + Prettier`.
+Commit: `A3: ESLint 9 flat config + Prettier`.
