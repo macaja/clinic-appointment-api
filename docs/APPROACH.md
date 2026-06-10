@@ -206,6 +206,26 @@ deliberate, reviewable progression; this file holds the reasoning, commit messag
   `src/app.module.ts` stub, `src/` and `test/` directory scaffolds.
   `npm run typecheck` exits 0; `npx jest` exits 0 (no tests).
 
+### A3 — ESLint 9 flat config + Prettier
+
+- **Goal:** lint and format the codebase with ESLint 9 (flat config) and Prettier, integrated so
+  they don't conflict.
+- **Decision:** `eslint.config.mjs` uses `tseslint.config()` helper to compose: (1) an ignores
+  block for `dist`/`node_modules`/`coverage`; (2) `tseslint.configs.recommended` spread; (3) a
+  language-options block (`globals.node` + `globals.jest`, `sourceType: module`,
+  `parserOptions.projectService: true`) with pragmatic rule relaxations (`no-explicit-any` → warn,
+  `no-unused-vars` → error with `argsIgnorePattern: '^_'`); (4) `eslint-plugin-prettier/recommended`
+  last so Prettier wins formatting. `.prettierrc` sets `singleQuote`, `trailingComma: all`,
+  `printWidth: 100`, `semi`. `.prettierignore` excludes `dist`, `coverage`, `node_modules`, `*.md`.
+- **Why `projectService: true`:** enables type-aware lint rules without specifying a hard-coded
+  `tsconfig.json` path; the ESLint language service discovers the project's tsconfig automatically.
+- **Why prettier last:** `eslint-plugin-prettier/recommended` includes `eslint-config-prettier` which
+  disables all ESLint stylistic rules that would conflict; placing it last ensures those disables win.
+- **Tradeoff:** flat config (`.mjs`) is ESLint 9's only supported format — the legacy `.eslintrc`
+  format was dropped. This is intentional and consistent with the ESLint 9 dependency declared in A1.
+- **Outcome:** `eslint.config.mjs`, `.prettierrc`, `.prettierignore` created. `npm run lint` exits 0;
+  `npm run format:check` exits 0.
+
 ### A1 — Scaffolding files (`.gitignore`, `package.json`, README skeleton)
 
 - **Goal:** lay down the project manifest and ignore rules so the repo is installable and
