@@ -2,7 +2,7 @@
 
 **Epic:** B — Domain · **Branch:** `feat/b-domain` (off `main` after A merged) · **Depends on:** A
 
-> Read `docs/APPROACH.md` + `docs/tickets/README.md` first. This is the **core graded logic** —
+> Read `.llm/plan.md` for architectural context if needed. This is the **core graded logic** —
 > the overlap rule. Write tests FIRST.
 
 ## Goal
@@ -40,4 +40,4 @@ Given a base range `[10:00, 11:00)`:
 - [ ] `npm test` green; `npm run lint` clean.
 
 ## On completion
-Append B1 entry to `docs/APPROACH.md` §6. Commit: `B1: TimeRange value object + overlap rule (TDD)`.
+Commit: `B1: TimeRange value object + overlap rule (TDD)`.

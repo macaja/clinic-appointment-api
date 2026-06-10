@@ -2,7 +2,7 @@
 
 **Epic:** G — Integration & docs · **Branch:** `feat/g-integration` (off `main` after F merged) · **Depends on:** F
 
-> Read `docs/APPROACH.md` + `docs/tickets/README.md` first. These cover the challenge's
+> Read `.llm/plan.md` for architectural context if needed. These cover the challenge's
 > explicitly-required test cases.
 
 ## Goal
@@ -37,4 +37,4 @@ The repo's `npm run test:integration` should run whichever is chosen.
 - [ ] CI (F5) can run it (in-process harness needs no Docker).
 
 ## On completion
-Append G1 entry to `docs/APPROACH.md` §6. Commit: `G1: integration tests (create/overlap/list/range)`.
+Commit: `G1: integration tests (create/overlap/list/range)`.

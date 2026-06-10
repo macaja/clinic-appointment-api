@@ -6,14 +6,12 @@ a fresh Claude Code (or human) session without the originating conversation.
 ## How to run a ticket in a fresh context
 
 1. Open Claude Code in the repo root (`clinic-appointment-api`).
-2. Tell it:
-   > Read `docs/APPROACH.md` and `docs/tickets/README.md` for context, then implement
-   > `docs/tickets/<TICKET>.md` exactly. Work TDD where the ticket says so. When done, append
-   > the per-ticket entry to `docs/APPROACH.md` §6 and stop for my review.
+2. Tell it: `implement <TICKET>` (e.g. `implement A4`).
+   CLAUDE.md instructs Claude to read `.llm/features/<id>.md` automatically.
 3. Review the diff, run the ticket's **Verification**, then commit with the ticket's message.
 
-`docs/APPROACH.md` is the source of truth for the challenge, architecture, decisions, schema,
-the overlap rule, the role matrix, and the development cycle. Read it first.
+`.llm/plan.md` is the architectural reference — key decisions, schema, overlap rule, role matrix,
+and build sequence. Claude reads it when a ticket needs cross-cutting context.
 
 ## Ground rules (apply to every ticket)
 

@@ -2,9 +2,9 @@
 
 **Epic:** C — Application · **Branch:** `feat/c-usecases` · **Depends on:** C2
 
-> Read `docs/APPROACH.md` + `docs/tickets/README.md` first. Write tests FIRST.
+> Read `.llm/plan.md` for architectural context if needed. Write tests FIRST.
 > Application layer uses **one class per operation** (use-cases), not a shared service —
-> see `docs/APPROACH.md` §6 (C-epic decision).
+> see `.llm/plan.md` §6 (C-epic decision).
 
 ## Goal
 Return a clinician's **upcoming** appointments, defaulting to `start >= now`, or within an
@@ -29,4 +29,4 @@ explicit `from`/`to` window.
 - [ ] `npm test` green; `npm run lint` clean.
 
 ## On completion
-Append C3 entry to `docs/APPROACH.md` §6. Commit: `C3: ListClinicianAppointments use-case (TDD)`.
+Commit: `C3: ListClinicianAppointments use-case (TDD)`.

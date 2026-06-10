@@ -2,7 +2,7 @@
 
 **Epic:** F — Tooling · **Branch:** `feat/f-tooling` (off `main` after E merged) · **Depends on:** E
 
-> Read `docs/APPROACH.md` + `docs/tickets/README.md` first.
+> Read `.llm/plan.md` for architectural context if needed.
 
 ## Goal
 Prepopulate a local DB with clinicians, patients and appointments — including deliberately
@@ -27,4 +27,4 @@ Prepopulate a local DB with clinicians, patients and appointments — including 
       a POST overlapping a seeded `c1` slot returns 409.
 
 ## On completion
-Append F1 entry to `docs/APPROACH.md` §6. Commit: `F1: seed data + runner (overlap scenarios)`.
+Commit: `F1: seed data + runner (overlap scenarios)`.

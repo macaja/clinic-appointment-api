@@ -2,7 +2,7 @@
 
 **Epic:** B — Domain · **Branch:** `feat/b-domain` · **Depends on:** B1
 
-> Read `docs/APPROACH.md` + `docs/tickets/README.md` first.
+> Read `.llm/plan.md` for architectural context if needed.
 
 ## Goal
 The `Appointment` domain entity (clinician + patient + time range) and the remaining domain
@@ -33,5 +33,5 @@ errors. Pure domain — no framework imports.
 - [ ] Domain stays framework-free; `npm test` green; `npm run lint` clean.
 
 ## On completion
-Append B2 entry to `docs/APPROACH.md` §6. Commit: `B2: Appointment entity + domain errors (TDD)`.
+Commit: `B2: Appointment entity + domain errors (TDD)`.
 **Epic B done** → `make review`, merge `feat/b-domain` into `main`.

@@ -2,7 +2,7 @@
 
 **Epic:** E — HTTP · **Branch:** `feat/e-http` (off `main` after D merged) · **Depends on:** D
 
-> Read `docs/APPROACH.md` + `docs/tickets/README.md` first.
+> Read `.llm/plan.md` for architectural context if needed.
 
 ## Goal
 Request DTOs with `class-validator` rules and a global `ValidationPipe`, so malformed input is
@@ -29,4 +29,4 @@ rejected with `400` before reaching the use-cases. Add Swagger property decorato
 - [ ] `npm run typecheck` + `npm run lint` clean.
 
 ## On completion
-Append E1 entry to `docs/APPROACH.md` §6. Commit: `E1: request DTOs + global ValidationPipe`.
+Commit: `E1: request DTOs + global ValidationPipe`.

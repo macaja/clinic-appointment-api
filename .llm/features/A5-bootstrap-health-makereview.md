@@ -2,7 +2,7 @@
 
 **Epic:** A — Scaffold · **Branch:** `feat/a-scaffold` · **Depends on:** A4
 
-> Read `docs/APPROACH.md` + `docs/tickets/README.md` first.
+> Read `.llm/plan.md` for architectural context if needed.
 
 ## Goal
 A minimal, bootable Nest app with a health endpoint, plus the `make review` target the dev
@@ -41,5 +41,5 @@ kill %1
 ```
 
 ## On completion
-Append A5 entry to `docs/APPROACH.md` §6. Commit: `A5: Nest bootstrap + /health + make review`.
+Commit: `A5: Nest bootstrap + /health + make review`.
 **Epic A done** → run `make review`, then merge `feat/a-scaffold` into `main` (`--no-ff`).

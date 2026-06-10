@@ -2,7 +2,7 @@
 
 **Epic:** E — HTTP · **Branch:** `feat/e-http` · **Depends on:** E3
 
-> Read `docs/APPROACH.md` + `docs/tickets/README.md` first. Endpoints + roles + status codes
+> Read `.llm/plan.md` for architectural context if needed. Endpoints + roles + status codes
 > are in the README tables. Controllers inject the **use-cases** (one per operation), not a
 > service.
 
@@ -28,4 +28,4 @@ use-case inputs and entities to response JSON via `Appointment.toPrimitives()`.
 - [ ] Compiles; lint clean. Full behaviour verified in G1.
 
 ## On completion
-Append E4 entry to `docs/APPROACH.md` §6. Commit: `E4: appointments + clinicians controllers`.
+Commit: `E4: appointments + clinicians controllers`.

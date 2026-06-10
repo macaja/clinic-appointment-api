@@ -2,7 +2,7 @@
 
 **Epic:** F — Tooling · **Branch:** `feat/f-tooling` · **Depends on:** F2
 
-> Read `docs/APPROACH.md` + `docs/tickets/README.md` first. The `review` target already exists
+> Read `.llm/plan.md` for architectural context if needed. The `review` target already exists
 > from A5 — extend, don't duplicate.
 
 ## Goal
@@ -27,4 +27,4 @@ the user asked for).
       seeded server.
 
 ## On completion
-Append F3 entry to `docs/APPROACH.md` §6. Commit: `F3: Makefile (setup, run, role helpers)`.
+Commit: `F3: Makefile (setup, run, role helpers)`.

@@ -2,7 +2,7 @@
 
 **Epic:** F — Tooling · **Branch:** `feat/f-tooling` · **Depends on:** F4
 
-> Read `docs/APPROACH.md` + `docs/tickets/README.md` first. CI mirrors the local `pre-push`
+> Read `.llm/plan.md` for architectural context if needed. CI mirrors the local `pre-push`
 > gate (A4).
 
 ## Goal
@@ -26,5 +26,5 @@ containerized integration tests.
 - [ ] Workflow is valid YAML and the steps mirror local gates. (Runs on GitHub when pushed.)
 
 ## On completion
-Append F5 entry to `docs/APPROACH.md` §6. Commit: `F5: GitHub Actions CI`.
+Commit: `F5: GitHub Actions CI`.
 **Epic F done** → `make review`, merge `feat/f-tooling` into `main`.

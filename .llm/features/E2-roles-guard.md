@@ -2,7 +2,7 @@
 
 **Epic:** E — HTTP · **Branch:** `feat/e-http` · **Depends on:** E1
 
-> Read `docs/APPROACH.md` + `docs/tickets/README.md` first. Follows the Nest authorization/RBAC
+> Read `.llm/plan.md` for architectural context if needed. Follows the Nest authorization/RBAC
 > pattern (https://docs.nestjs.com/security/authorization).
 
 ## Goal
@@ -26,4 +26,4 @@ Simulate auth via an `X-Role` header (fallback `?role=`) and enforce the role→
       per-controller or globally with `Reflector` — decide in E4/E6.)
 
 ## On completion
-Append E2 entry to `docs/APPROACH.md` §6. Commit: `E2: RolesGuard + @Roles decorator (X-Role)`.
+Commit: `E2: RolesGuard + @Roles decorator (X-Role)`.

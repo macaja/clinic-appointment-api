@@ -2,7 +2,7 @@
 
 **Epic:** D — Persistence · **Branch:** `feat/d-persistence` (off `main` after C merged) · **Depends on:** C
 
-> Read `docs/APPROACH.md` + `docs/tickets/README.md` first.
+> Read `.llm/plan.md` for architectural context if needed.
 
 ## Goal
 A `better-sqlite3` connection factory that applies pragmas and bootstraps the schema, so the
@@ -11,7 +11,7 @@ for tests.
 
 ## Files
 - **`src/infra/persistence/sqlite/schema.sql`** — exactly the three-table schema from
-  `docs/APPROACH.md` §4 (clinician, patient, appointment with FKs; `startUtc`/`endUtc` INTEGER
+  `.llm/plan.md` §4 (clinician, patient, appointment with FKs; `startUtc`/`endUtc` INTEGER
   epoch-ms; `createdAt` INTEGER) plus
   `CREATE INDEX IF NOT EXISTS idx_appt_clinician_time ON appointment(clinicianId, startUtc, endUtc);`.
 - **`src/infra/persistence/sqlite/db.ts`**
@@ -34,4 +34,4 @@ for tests.
 - [ ] `:memory:` db bootstraps all tables + index; FKs on. `npm test` green; lint clean.
 
 ## On completion
-Append D1 entry to `docs/APPROACH.md` §6. Commit: `D1: SQLite connection + schema bootstrap`.
+Commit: `D1: SQLite connection + schema bootstrap`.

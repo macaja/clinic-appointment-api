@@ -2,7 +2,7 @@
 
 **Epic:** F — Tooling · **Branch:** `feat/f-tooling` · **Depends on:** F1
 
-> Read `docs/APPROACH.md` + `docs/tickets/README.md` first.
+> Read `.llm/plan.md` for architectural context if needed.
 
 ## Goal
 Ready-to-run curl scripts demonstrating each endpoint as each role, for reviewers and the
@@ -22,4 +22,4 @@ Makefile role-helper targets (F3).
       (`201`/`200`/`409`/`403` as appropriate).
 
 ## On completion
-Append F2 entry to `docs/APPROACH.md` §6. Commit: `F2: per-role curl scripts`.
+Commit: `F2: per-role curl scripts`.

@@ -2,11 +2,11 @@
 
 **Epic:** D — Persistence · **Branch:** `feat/d-persistence` · **Depends on:** D1
 
-> Read `docs/APPROACH.md` + `docs/tickets/README.md` first.
+> Read `.llm/plan.md` for architectural context if needed.
 
 ## Goal
 Implement the `PeopleRepository` port against SQLite, auto-creating clinician/patient stub rows
-on first reference (per the auto-create decision in `docs/APPROACH.md`).
+on first reference (per the auto-create decision in `.llm/plan.md`).
 
 ## Files
 - **`src/infra/persistence/sqlite/sqlite-people.repository.ts`**
@@ -25,4 +25,4 @@ on first reference (per the auto-create decision in `docs/APPROACH.md`).
 - [ ] `npm test` green; lint clean. Adapter implements the port interface exactly.
 
 ## On completion
-Append D2 entry to `docs/APPROACH.md` §6. Commit: `D2: SqlitePeopleRepository (auto-create)`.
+Commit: `D2: SqlitePeopleRepository (auto-create)`.

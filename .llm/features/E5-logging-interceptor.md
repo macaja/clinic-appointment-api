@@ -2,7 +2,7 @@
 
 **Epic:** E — HTTP · **Branch:** `feat/e-http` · **Depends on:** E4
 
-> Read `docs/APPROACH.md` + `docs/tickets/README.md` first. Observability is called out as
+> Read `.llm/plan.md` for architectural context if needed. Observability is called out as
 > important.
 
 ## Goal
@@ -26,4 +26,4 @@ Structured request logging: method, path, status, duration, and a correlation id
 - [ ] typecheck + lint clean; app still boots.
 
 ## On completion
-Append E5 entry to `docs/APPROACH.md` §6. Commit: `E5: logging interceptor + correlation id`.
+Commit: `E5: logging interceptor + correlation id`.

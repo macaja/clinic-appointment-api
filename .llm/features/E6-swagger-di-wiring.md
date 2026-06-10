@@ -2,7 +2,7 @@
 
 **Epic:** E — HTTP · **Branch:** `feat/e-http` · **Depends on:** E5
 
-> Read `docs/APPROACH.md` + `docs/tickets/README.md` first. This ticket makes the app fully
+> Read `.llm/plan.md` for architectural context if needed. This ticket makes the app fully
 > functional end-to-end.
 
 ## Goal
@@ -44,5 +44,5 @@ kill %1
 ```
 
 ## On completion
-Append E6 entry to `docs/APPROACH.md` §6. Commit: `E6: Swagger + DI wiring (ports→adapters)`.
+Commit: `E6: Swagger + DI wiring (ports→adapters)`.
 **Epic E done** → `make review`, merge `feat/e-http` into `main`.

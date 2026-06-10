@@ -2,7 +2,7 @@
 
 **Epic:** D — Persistence · **Branch:** `feat/d-persistence` · **Depends on:** D2
 
-> Read `docs/APPROACH.md` + `docs/tickets/README.md` first. This is where the **race-condition
+> Read `.llm/plan.md` for architectural context if needed. This is where the **race-condition
 > -safe overlap prevention** lives — the headline requirement.
 
 ## Goal
@@ -48,6 +48,6 @@ Implement `AppointmentRepository` against SQLite, with overlap detection done in
 - [ ] All tests green; lint clean. The overlap predicate matches B1's rule exactly.
 
 ## On completion
-Append D3 entry to `docs/APPROACH.md` §6 (include the concurrency explanation).
+Append D3 entry to `.llm/plan.md` §6 (include the concurrency explanation).
 Commit: `D3: SqliteAppointmentRepository + BEGIN IMMEDIATE overlap guard`.
 **Epic D done** → `make review`, merge `feat/d-persistence` into `main`.

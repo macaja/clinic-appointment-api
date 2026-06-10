@@ -2,7 +2,7 @@
 
 **Epic:** A — Scaffold · **Branch:** `feat/a-scaffold` · **Depends on:** A1
 
-> Read `docs/APPROACH.md` + `docs/tickets/README.md` first.
+> Read `.llm/plan.md` for architectural context if needed.
 
 ## Goal
 Wire TypeScript, the Nest CLI build, and the Jest test runner so later tickets have a compiler
@@ -35,4 +35,4 @@ npx jest
 ```
 
 ## On completion
-Append A2 entry to `docs/APPROACH.md` §6. Commit: `A2: TypeScript, Nest & Jest config`.
+Commit: `A2: TypeScript, Nest & Jest config`.

@@ -2,7 +2,7 @@
 
 **Epic:** F — Tooling · **Branch:** `feat/f-tooling` · **Depends on:** F3
 
-> Read `docs/APPROACH.md` + `docs/tickets/README.md` first. The container is also the target
+> Read `.llm/plan.md` for architectural context if needed. The container is also the target
 > the integration tests run against (G1).
 
 ## Goal
@@ -30,4 +30,4 @@ docker compose down
 ```
 
 ## On completion
-Append F4 entry to `docs/APPROACH.md` §6. Commit: `F4: Dockerfile + docker-compose (SQLite volume)`.
+Commit: `F4: Dockerfile + docker-compose (SQLite volume)`.

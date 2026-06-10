@@ -2,12 +2,12 @@
 
 **Epic:** A — Scaffold · **Branch:** `feat/a-scaffold` · **Depends on:** A3
 
-> Read `docs/APPROACH.md` + `docs/tickets/README.md` first.
+> Read `.llm/plan.md` for architectural context if needed.
 
 ## Goal
 Local quality gates: a fast `pre-commit` (format/lint staged files) and a thorough `pre-push`
 (full lint + typecheck + tests + build). These mirror CI (F5) so nothing broken leaves the
-machine. See `docs/APPROACH.md` §5 for the dev cycle.
+machine. See `.llm/plan.md` §5 for the dev cycle.
 
 ## Files to create
 Husky 9 was initialised by the `prepare` script (creates `.husky/_`). Add hook scripts
@@ -37,4 +37,4 @@ ls -l .husky/pre-commit .husky/pre-push   # executable bits set
 ```
 
 ## On completion
-Append A4 entry to `docs/APPROACH.md` §6. Commit: `A4: husky pre-commit + pre-push hooks`.
+Commit: `A4: husky pre-commit + pre-push hooks`.

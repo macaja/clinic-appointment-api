@@ -2,7 +2,7 @@
 
 **Epic:** E — HTTP · **Branch:** `feat/e-http` · **Depends on:** E2
 
-> Read `docs/APPROACH.md` + `docs/tickets/README.md` first.
+> Read `.llm/plan.md` for architectural context if needed.
 
 ## Goal
 Translate domain errors into the correct HTTP status + a sensible JSON error body, keeping the
@@ -11,7 +11,7 @@ domain/use-case layers free of HTTP concerns.
 ## Files
 - **`src/infra/http/domain-exception.filter.ts`** — `@Catch(InvalidTimeRangeError,
   PastAppointmentError, OverlapError) DomainExceptionFilter implements ExceptionFilter`:
-  - map per the table in `docs/tickets/README.md`:
+  - map per the table in `.llm/features/README.md`:
     - `OverlapError` → **409**
     - `InvalidTimeRangeError`, `PastAppointmentError` → **400**
   - response body: `{ statusCode, error, message }` (use the error's `.message`).
@@ -25,4 +25,4 @@ domain/use-case layers free of HTTP concerns.
 - [ ] Invalid range / past returns `400`. typecheck + lint clean.
 
 ## On completion
-Append E3 entry to `docs/APPROACH.md` §6. Commit: `E3: domain→HTTP exception filter`.
+Commit: `E3: domain→HTTP exception filter`.

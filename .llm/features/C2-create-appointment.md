@@ -2,7 +2,7 @@
 
 **Epic:** C — Application · **Branch:** `feat/c-usecases` · **Depends on:** C1
 
-> Read `docs/APPROACH.md` + `docs/tickets/README.md` first. Write tests FIRST.
+> Read `.llm/plan.md` for architectural context if needed. Write tests FIRST.
 
 ## Goal
 The booking use-case: validate the time range, reject past appointments, auto-create the
@@ -34,4 +34,4 @@ clinician/patient, and persist via the overlap-safe repository.
 - [ ] `npm test` green; `npm run lint` clean; use-case depends only on ports + domain.
 
 ## On completion
-Append C2 entry to `docs/APPROACH.md` §6. Commit: `C2: CreateAppointment use-case (TDD)`.
+Commit: `C2: CreateAppointment use-case (TDD)`.

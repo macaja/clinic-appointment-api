@@ -2,8 +2,8 @@
 
 **Epic:** C — Application · **Branch:** `feat/c-usecases` · **Depends on:** C3
 
-> Read `docs/APPROACH.md` + `docs/tickets/README.md` first. Write tests FIRST.
-> One class per operation (use-case), per the C-epic decision in `docs/APPROACH.md` §6.
+> Read `.llm/plan.md` for architectural context if needed. Write tests FIRST.
+> One class per operation (use-case), per the C-epic decision in `.llm/plan.md` §6.
 
 ## Goal
 Admin listing of **all** upcoming appointments, with optional `from`/`to` range and optional
@@ -28,5 +28,5 @@ Admin listing of **all** upcoming appointments, with optional `from`/`to` range 
 - [ ] `npm test` green; `npm run lint` clean.
 
 ## On completion
-Append C4 entry to `docs/APPROACH.md` §6. Commit: `C4: ListAllAppointments use-case (TDD)`.
+Commit: `C4: ListAllAppointments use-case (TDD)`.
 **Epic C done** → `make review`, merge `feat/c-usecases` into `main`.
