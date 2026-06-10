@@ -1,4 +1,4 @@
-.PHONY: help local-setup local-run local-create-appointment \
+.PHONY: help local-start local-setup local-stop local-run local-create-appointment \
         local-clinician-get-appointments local-admin-get-appointments \
         lint format typecheck test test-integration build review \
         local-race-condition-test local-clean-db
@@ -6,21 +6,38 @@
 help: ## Show available targets
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-36s\033[0m %s\n", $$1, $$2}'
 
-local-setup: ## Install dependencies
-	npm ci
+local-start: ## Launch OrbStack, build image, start the API container, then tail logs
+	open -a OrbStack
+	@echo "Waiting for OrbStack daemon..."
+	@until docker info > /dev/null 2>&1; do sleep 1; done
+	docker compose up --build -d
+	docker compose logs -f api
 
-local-run: ## Start the API server (watches for changes)
-	npm run start:dev
+local-setup: ## Build image, start the API container, then tail logs
+	docker compose up --build -d
+	docker compose logs -f api
 
-local-create-appointment: ## POST /appointments as patient role
-	bash scripts/create-appointment.sh
+local-stop: ## Stop and remove the API container
+	docker compose down
+
+local-run: ## Tail logs from the running API container
+	docker compose logs -f api
+
+local-create-appointment: ## POST /appointments as patient role (runs in container)
+	docker compose exec api bash scripts/create-appointment.sh
 
 CLINICIAN_ID ?= c1
 local-clinician-get-appointments: ## GET /clinicians/:id/appointments — pass CLINICIAN_ID=c2 to override (default: c1)
-	CLINICIAN_ID="$(CLINICIAN_ID)" bash scripts/get-clinician-appointments.sh
+	docker compose exec -e CLINICIAN_ID="$(CLINICIAN_ID)" api bash scripts/get-clinician-appointments.sh
 
-local-admin-get-appointments: ## GET /appointments as admin role
-	bash scripts/get-all-appointments.sh
+local-admin-get-appointments: ## GET /appointments as admin role (runs in container)
+	docker compose exec api bash scripts/get-all-appointments.sh
+
+local-race-condition-test: ## Fire two overlapping bookings in parallel — expect 1×201 and 1×409
+	docker compose exec api bash scripts/race-condition-test.sh
+
+local-clean-db: ## Delete all rows from the SQLite database in the container
+	docker compose exec api bash scripts/clean-db.sh
 
 lint: ## Run ESLint
 	npm run lint
@@ -39,12 +56,6 @@ test-integration: ## Run integration tests
 
 build: ## Build the project
 	npm run build
-
-local-clean-db: ## Delete all rows from the local SQLite database
-	bash scripts/clean-db.sh
-
-local-race-condition-test: ## Fire two overlapping bookings in parallel — expect 1×201 and 1×409
-	bash scripts/race-condition-test.sh
 
 review: ## Lint + typecheck + tests + build + AI diff review vs main
 	npm run lint && npm run typecheck && npm test && npm run build

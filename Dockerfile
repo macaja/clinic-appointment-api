@@ -17,12 +17,13 @@ FROM node:20-slim AS runner
 
 WORKDIR /app
 
+RUN apt-get update -y && apt-get install -y --no-install-recommends curl sqlite3 && rm -rf /var/lib/apt/lists/*
+
 ENV DATABASE_PATH=/data/clinic.db
 ENV NODE_ENV=production
 
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/dist        ./dist
-COPY --from=builder /app/seed        ./seed
 COPY --from=builder /app/scripts     ./scripts
 COPY package.json ./
 
