@@ -1,15 +1,13 @@
-.PHONY: help local-setup local-seed local-run local-create-appointment \
+.PHONY: help local-setup local-run local-create-appointment \
         local-clinician-get-appointments local-admin-get-appointments \
-        lint format typecheck test test-integration build review
+        lint format typecheck test test-integration build review \
+        local-race-condition-test
 
 help: ## Show available targets
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-36s\033[0m %s\n", $$1, $$2}'
 
 local-setup: ## Install dependencies
 	npm ci
-
-local-seed: ## Load seed data into local DB
-	node scripts/seed.js
 
 local-run: ## Start the API server (watches for changes)
 	npm run start:dev
@@ -40,6 +38,9 @@ test-integration: ## Run integration tests
 
 build: ## Build the project
 	npm run build
+
+local-race-condition-test: ## Fire two overlapping bookings in parallel — expect 1×201 and 1×409
+	bash scripts/race-condition-test.sh
 
 review: ## Lint + typecheck + tests + build + AI diff review vs main
 	npm run lint && npm run typecheck && npm test && npm run build
