@@ -1,6 +1,6 @@
 # G1 — Integration tests (the 4 required scenarios)
 
-**Epic:** G — Integration & docs · **Branch:** `feat/g-integration` (off `main` after F merged) · **Depends on:** F
+**Epic:** G — Integration & docs · **Branch:** `feat/g1-integration-tests` · **Depends on:** F
 
 > Read `.llm/plan.md` for architectural context if needed. These cover the challenge's
 > explicitly-required test cases.
@@ -38,3 +38,4 @@ The repo's `npm run test:integration` should run whichever is chosen.
 
 ## On completion
 Commit: `G1: integration tests (create/overlap/list/range)`.
+Run `make review`, then merge `feat/g1-integration-tests` into `main` (`--no-ff`).

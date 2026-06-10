@@ -1,6 +1,6 @@
 # F2 — Per-role curl scripts
 
-**Epic:** F — Tooling · **Branch:** `feat/f-tooling` · **Depends on:** F1
+**Epic:** F — Tooling · **Branch:** `feat/f2-curl-scripts` · **Depends on:** F1
 
 > Read `.llm/plan.md` for architectural context if needed.
 
@@ -23,3 +23,4 @@ Makefile role-helper targets (F3).
 
 ## On completion
 Commit: `F2: per-role curl scripts`.
+Run `make review`, then merge `feat/f2-curl-scripts` into `main` (`--no-ff`).

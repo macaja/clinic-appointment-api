@@ -1,6 +1,6 @@
 # F1 — Seed data + runner (overlap scenarios)
 
-**Epic:** F — Tooling · **Branch:** `feat/f-tooling` (off `main` after E merged) · **Depends on:** E
+**Epic:** F — Tooling · **Branch:** `feat/f1-seed` · **Depends on:** E
 
 > Read `.llm/plan.md` for architectural context if needed.
 
@@ -28,3 +28,4 @@ Prepopulate a local DB with clinicians, patients and appointments — including 
 
 ## On completion
 Commit: `F1: seed data + runner (overlap scenarios)`.
+Run `make review`, then merge `feat/f1-seed` into `main` (`--no-ff`).

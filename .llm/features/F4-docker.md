@@ -1,6 +1,6 @@
 # F4 — Dockerfile + docker-compose
 
-**Epic:** F — Tooling · **Branch:** `feat/f-tooling` · **Depends on:** F3
+**Epic:** F — Tooling · **Branch:** `feat/f4-docker` · **Depends on:** F3
 
 > Read `.llm/plan.md` for architectural context if needed. The container is also the target
 > the integration tests run against (G1).
@@ -31,3 +31,4 @@ docker compose down
 
 ## On completion
 Commit: `F4: Dockerfile + docker-compose (SQLite volume)`.
+Run `make review`, then merge `feat/f4-docker` into `main` (`--no-ff`).

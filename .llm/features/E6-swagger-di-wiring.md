@@ -1,6 +1,6 @@
 # E6 — Swagger + DI wiring (ports → adapters)
 
-**Epic:** E — HTTP · **Branch:** `feat/e-http` · **Depends on:** E5
+**Epic:** E — HTTP · **Branch:** `feat/e6-swagger-di-wiring` · **Depends on:** E5
 
 > Read `.llm/plan.md` for architectural context if needed. This ticket makes the app fully
 > functional end-to-end.
@@ -45,4 +45,4 @@ kill %1
 
 ## On completion
 Commit: `E6: Swagger + DI wiring (ports→adapters)`.
-**Epic E done** → `make review`, merge `feat/e-http` into `main`.
+Run `make review`, then merge `feat/e6-swagger-di-wiring` into `main` (`--no-ff`).

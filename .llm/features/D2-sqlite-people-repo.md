@@ -1,6 +1,6 @@
 # D2 — `SqlitePeopleRepository` (+ tests)
 
-**Epic:** D — Persistence · **Branch:** `feat/d-persistence` · **Depends on:** D1
+**Epic:** D — Persistence · **Branch:** `feat/d2-sqlite-people-repo` · **Depends on:** D1
 
 > Read `.llm/plan.md` for architectural context if needed.
 
@@ -26,3 +26,4 @@ on first reference (per the auto-create decision in `.llm/plan.md`).
 
 ## On completion
 Commit: `D2: SqlitePeopleRepository (auto-create)`.
+Run `make review`, then merge `feat/d2-sqlite-people-repo` into `main` (`--no-ff`).

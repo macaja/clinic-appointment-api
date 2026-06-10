@@ -1,6 +1,6 @@
 # C4 — `ListAllAppointments` use-case (TDD)
 
-**Epic:** C — Application · **Branch:** `feat/c-usecases` · **Depends on:** C3
+**Epic:** C — Application · **Branch:** `feat/c4-list-all` · **Depends on:** C3
 
 > Read `.llm/plan.md` for architectural context if needed. Write tests FIRST.
 > One class per operation (use-case), per the C-epic decision in `.llm/plan.md` §6.
@@ -29,4 +29,4 @@ Admin listing of **all** upcoming appointments, with optional `from`/`to` range 
 
 ## On completion
 Commit: `C4: ListAllAppointments use-case (TDD)`.
-**Epic C done** → `make review`, merge `feat/c-usecases` into `main`.
+Run `make review`, then merge `feat/c4-list-all` into `main` (`--no-ff`).

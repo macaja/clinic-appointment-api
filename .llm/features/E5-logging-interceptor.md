@@ -1,6 +1,6 @@
 # E5 — Logging interceptor + logger
 
-**Epic:** E — HTTP · **Branch:** `feat/e-http` · **Depends on:** E4
+**Epic:** E — HTTP · **Branch:** `feat/e5-logging-interceptor` · **Depends on:** E4
 
 > Read `.llm/plan.md` for architectural context if needed. Observability is called out as
 > important.
@@ -27,3 +27,4 @@ Structured request logging: method, path, status, duration, and a correlation id
 
 ## On completion
 Commit: `E5: logging interceptor + correlation id`.
+Run `make review`, then merge `feat/e5-logging-interceptor` into `main` (`--no-ff`).

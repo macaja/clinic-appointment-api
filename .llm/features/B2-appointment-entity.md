@@ -1,6 +1,6 @@
 # B2 — `Appointment` entity + remaining domain errors (TDD)
 
-**Epic:** B — Domain · **Branch:** `feat/b-domain` · **Depends on:** B1
+**Epic:** B — Domain · **Branch:** `feat/b2-appointment-entity` · **Depends on:** B1
 
 > Read `.llm/plan.md` for architectural context if needed.
 
@@ -34,4 +34,4 @@ errors. Pure domain — no framework imports.
 
 ## On completion
 Commit: `B2: Appointment entity + domain errors (TDD)`.
-**Epic B done** → `make review`, merge `feat/b-domain` into `main`.
+Run `make review`, then merge `feat/b2-appointment-entity` into `main` (`--no-ff`).

@@ -1,6 +1,6 @@
 # E3 — Domain → HTTP exception filter
 
-**Epic:** E — HTTP · **Branch:** `feat/e-http` · **Depends on:** E2
+**Epic:** E — HTTP · **Branch:** `feat/e3-exception-filter` · **Depends on:** E2
 
 > Read `.llm/plan.md` for architectural context if needed.
 
@@ -26,3 +26,4 @@ domain/use-case layers free of HTTP concerns.
 
 ## On completion
 Commit: `E3: domain→HTTP exception filter`.
+Run `make review`, then merge `feat/e3-exception-filter` into `main` (`--no-ff`).

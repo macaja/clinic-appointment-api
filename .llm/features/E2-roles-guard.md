@@ -1,6 +1,6 @@
 # E2 — RolesGuard + @Roles decorator (auth simulation)
 
-**Epic:** E — HTTP · **Branch:** `feat/e-http` · **Depends on:** E1
+**Epic:** E — HTTP · **Branch:** `feat/e2-roles-guard` · **Depends on:** E1
 
 > Read `.llm/plan.md` for architectural context if needed. Follows the Nest authorization/RBAC
 > pattern (https://docs.nestjs.com/security/authorization).
@@ -27,3 +27,4 @@ Simulate auth via an `X-Role` header (fallback `?role=`) and enforce the role→
 
 ## On completion
 Commit: `E2: RolesGuard + @Roles decorator (X-Role)`.
+Run `make review`, then merge `feat/e2-roles-guard` into `main` (`--no-ff`).

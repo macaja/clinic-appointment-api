@@ -1,6 +1,6 @@
 # B1 — `TimeRange` value object + domain errors (TDD)
 
-**Epic:** B — Domain · **Branch:** `feat/b-domain` (off `main` after A merged) · **Depends on:** A
+**Epic:** B — Domain · **Branch:** `feat/b1-timerange-errors` · **Depends on:** A
 
 > Read `.llm/plan.md` for architectural context if needed. This is the **core graded logic** —
 > the overlap rule. Write tests FIRST.
@@ -41,3 +41,4 @@ Given a base range `[10:00, 11:00)`:
 
 ## On completion
 Commit: `B1: TimeRange value object + overlap rule (TDD)`.
+Run `make review`, then merge `feat/b1-timerange-errors` into `main` (`--no-ff`).

@@ -1,6 +1,6 @@
 # C1 — Ports, in-memory fakes & Clock
 
-**Epic:** C — Application · **Branch:** `feat/c-usecases` (off `main` after B merged) · **Depends on:** B
+**Epic:** C — Application · **Branch:** `feat/c1-ports-fakes-clock` · **Depends on:** B
 
 > Read `.llm/plan.md` for architectural context if needed.
 
@@ -35,3 +35,4 @@ port, and in-memory fakes used by the use-case specs in C2–C4. No SQLite here 
 
 ## On completion
 Commit: `C1: application ports, Clock, in-memory fakes`.
+Run `make review`, then merge `feat/c1-ports-fakes-clock` into `main` (`--no-ff`).

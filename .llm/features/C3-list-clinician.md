@@ -1,6 +1,6 @@
 # C3 — `ListClinicianAppointments` use-case (TDD)
 
-**Epic:** C — Application · **Branch:** `feat/c-usecases` · **Depends on:** C2
+**Epic:** C — Application · **Branch:** `feat/c3-list-clinician` · **Depends on:** C2
 
 > Read `.llm/plan.md` for architectural context if needed. Write tests FIRST.
 > Application layer uses **one class per operation** (use-cases), not a shared service —
@@ -30,3 +30,4 @@ explicit `from`/`to` window.
 
 ## On completion
 Commit: `C3: ListClinicianAppointments use-case (TDD)`.
+Run `make review`, then merge `feat/c3-list-clinician` into `main` (`--no-ff`).

@@ -1,6 +1,6 @@
 # C2 — `CreateAppointment` use-case (TDD)
 
-**Epic:** C — Application · **Branch:** `feat/c-usecases` · **Depends on:** C1
+**Epic:** C — Application · **Branch:** `feat/c2-create-appointment` · **Depends on:** C1
 
 > Read `.llm/plan.md` for architectural context if needed. Write tests FIRST.
 
@@ -35,3 +35,4 @@ clinician/patient, and persist via the overlap-safe repository.
 
 ## On completion
 Commit: `C2: CreateAppointment use-case (TDD)`.
+Run `make review`, then merge `feat/c2-create-appointment` into `main` (`--no-ff`).

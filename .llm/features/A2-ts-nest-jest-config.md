@@ -1,6 +1,6 @@
 # A2 — TypeScript, Nest & Jest config
 
-**Epic:** A — Scaffold · **Branch:** `feat/a-scaffold` · **Depends on:** A1
+**Epic:** A — Scaffold · **Branch:** `feat/a2-ts-nest-jest-config` · **Depends on:** A1
 
 > Read `.llm/plan.md` for architectural context if needed.
 
@@ -36,3 +36,4 @@ npx jest
 
 ## On completion
 Commit: `A2: TypeScript, Nest & Jest config`.
+Run `make review`, then merge `feat/a2-ts-nest-jest-config` into `main` (`--no-ff`).

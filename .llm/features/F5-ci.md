@@ -1,6 +1,6 @@
 # F5 — GitHub Actions CI
 
-**Epic:** F — Tooling · **Branch:** `feat/f-tooling` · **Depends on:** F4
+**Epic:** F — Tooling · **Branch:** `feat/f5-ci` · **Depends on:** F4
 
 > Read `.llm/plan.md` for architectural context if needed. CI mirrors the local `pre-push`
 > gate (A4).
@@ -27,4 +27,4 @@ containerized integration tests.
 
 ## On completion
 Commit: `F5: GitHub Actions CI`.
-**Epic F done** → `make review`, merge `feat/f-tooling` into `main`.
+Run `make review`, then merge `feat/f5-ci` into `main` (`--no-ff`).

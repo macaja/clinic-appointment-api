@@ -1,6 +1,6 @@
 # E4 — Controllers (the three endpoints)
 
-**Epic:** E — HTTP · **Branch:** `feat/e-http` · **Depends on:** E3
+**Epic:** E — HTTP · **Branch:** `feat/e4-controllers` · **Depends on:** E3
 
 > Read `.llm/plan.md` for architectural context if needed. Endpoints + roles + status codes
 > are in the README tables. Controllers inject the **use-cases** (one per operation), not a
@@ -29,3 +29,4 @@ use-case inputs and entities to response JSON via `Appointment.toPrimitives()`.
 
 ## On completion
 Commit: `E4: appointments + clinicians controllers`.
+Run `make review`, then merge `feat/e4-controllers` into `main` (`--no-ff`).

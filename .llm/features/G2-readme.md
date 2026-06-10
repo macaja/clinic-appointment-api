@@ -1,6 +1,6 @@
 # G2 — Finalize README
 
-**Epic:** G — Integration & docs · **Branch:** `feat/g-integration` · **Depends on:** G1
+**Epic:** G — Integration & docs · **Branch:** `feat/g2-readme` · **Depends on:** G1
 
 > Read `.llm/plan.md` for architectural context if needed. The challenge explicitly requires a
 > README with run + test instructions, example curls, and a design-decisions/tradeoffs note.
@@ -30,4 +30,4 @@ Replace the README skeleton with the complete, accurate doc reflecting the finis
 
 ## On completion
 Commit: `G2: finalize README`.
-**Epic G done** → `make review`, merge `feat/g-integration` into `main`. Project complete.
+Run `make review`, then merge `feat/g2-readme` into `main` (`--no-ff`).

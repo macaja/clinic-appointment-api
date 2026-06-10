@@ -1,6 +1,6 @@
 # F3 — Makefile (setup + run + role helpers)
 
-**Epic:** F — Tooling · **Branch:** `feat/f-tooling` · **Depends on:** F2
+**Epic:** F — Tooling · **Branch:** `feat/f3-makefile` · **Depends on:** F2
 
 > Read `.llm/plan.md` for architectural context if needed. The `review` target already exists
 > from A5 — extend, don't duplicate.
@@ -28,3 +28,4 @@ the user asked for).
 
 ## On completion
 Commit: `F3: Makefile (setup, run, role helpers)`.
+Run `make review`, then merge `feat/f3-makefile` into `main` (`--no-ff`).

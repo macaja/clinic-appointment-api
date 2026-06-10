@@ -1,6 +1,6 @@
 # D1 — SQLite connection + schema bootstrap
 
-**Epic:** D — Persistence · **Branch:** `feat/d-persistence` (off `main` after C merged) · **Depends on:** C
+**Epic:** D — Persistence · **Branch:** `feat/d1-db-schema` · **Depends on:** C
 
 > Read `.llm/plan.md` for architectural context if needed.
 
@@ -35,3 +35,4 @@ for tests.
 
 ## On completion
 Commit: `D1: SQLite connection + schema bootstrap`.
+Run `make review`, then merge `feat/d1-db-schema` into `main` (`--no-ff`).

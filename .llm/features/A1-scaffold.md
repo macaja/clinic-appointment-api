@@ -1,6 +1,6 @@
 # A1 — Scaffolding files ✅ DONE
 
-**Epic:** A — Scaffold · **Branch:** `feat/a-scaffold` · **Status:** complete
+**Epic:** A — Scaffold · **Branch:** `feat/a1-scaffold` · **Status:** complete
 
 Recorded for completeness. Delivered: `.gitignore`, `package.json` (NestJS 11, Jest 30,
 `better-sqlite3`, class-validator/transformer, ESLint 9 + Prettier, husky/lint-staged; no

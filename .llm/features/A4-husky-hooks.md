@@ -1,6 +1,6 @@
 # A4 — Husky pre-commit + pre-push hooks
 
-**Epic:** A — Scaffold · **Branch:** `feat/a-scaffold` · **Depends on:** A3
+**Epic:** A — Scaffold · **Branch:** `feat/a4-husky-hooks` · **Depends on:** A3
 
 > Read `.llm/plan.md` for architectural context if needed.
 
@@ -38,3 +38,4 @@ ls -l .husky/pre-commit .husky/pre-push   # executable bits set
 
 ## On completion
 Commit: `A4: husky pre-commit + pre-push hooks`.
+Run `make review`, then merge `feat/a4-husky-hooks` into `main` (`--no-ff`).

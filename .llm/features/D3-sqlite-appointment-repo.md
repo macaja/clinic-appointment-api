@@ -1,6 +1,6 @@
 # D3 — `SqliteAppointmentRepository` + concurrency (the core)
 
-**Epic:** D — Persistence · **Branch:** `feat/d-persistence` · **Depends on:** D2
+**Epic:** D — Persistence · **Branch:** `feat/d3-sqlite-appointment-repo` · **Depends on:** D2
 
 > Read `.llm/plan.md` for architectural context if needed. This is where the **race-condition
 > -safe overlap prevention** lives — the headline requirement.
@@ -48,6 +48,5 @@ Implement `AppointmentRepository` against SQLite, with overlap detection done in
 - [ ] All tests green; lint clean. The overlap predicate matches B1's rule exactly.
 
 ## On completion
-Append D3 entry to `.llm/plan.md` §6 (include the concurrency explanation).
 Commit: `D3: SqliteAppointmentRepository + BEGIN IMMEDIATE overlap guard`.
-**Epic D done** → `make review`, merge `feat/d-persistence` into `main`.
+Run `make review`, then merge `feat/d3-sqlite-appointment-repo` into `main` (`--no-ff`).

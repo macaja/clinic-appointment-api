@@ -1,6 +1,6 @@
 # A3 — ESLint 9 (flat) + Prettier
 
-**Epic:** A — Scaffold · **Branch:** `feat/a-scaffold` · **Depends on:** A2
+**Epic:** A — Scaffold · **Branch:** `feat/a3-eslint-prettier` · **Depends on:** A2
 
 > Read `.llm/plan.md` for architectural context if needed.
 
@@ -39,3 +39,4 @@ npm run format:check
 
 ## On completion
 Commit: `A3: ESLint 9 flat config + Prettier`.
+Run `make review`, then merge `feat/a3-eslint-prettier` into `main` (`--no-ff`).

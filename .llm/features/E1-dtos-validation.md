@@ -1,6 +1,6 @@
 # E1 — DTOs + global ValidationPipe
 
-**Epic:** E — HTTP · **Branch:** `feat/e-http` (off `main` after D merged) · **Depends on:** D
+**Epic:** E — HTTP · **Branch:** `feat/e1-dtos-validation` · **Depends on:** D
 
 > Read `.llm/plan.md` for architectural context if needed.
 
@@ -30,3 +30,4 @@ rejected with `400` before reaching the use-cases. Add Swagger property decorato
 
 ## On completion
 Commit: `E1: request DTOs + global ValidationPipe`.
+Run `make review`, then merge `feat/e1-dtos-validation` into `main` (`--no-ff`).

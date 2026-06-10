@@ -1,6 +1,6 @@
 # A5 — Nest bootstrap + /health + `make review`
 
-**Epic:** A — Scaffold · **Branch:** `feat/a-scaffold` · **Depends on:** A4
+**Epic:** A — Scaffold · **Branch:** `feat/a5-bootstrap-health-makereview` · **Depends on:** A4
 
 > Read `.llm/plan.md` for architectural context if needed.
 
@@ -42,4 +42,4 @@ kill %1
 
 ## On completion
 Commit: `A5: Nest bootstrap + /health + make review`.
-**Epic A done** → run `make review`, then merge `feat/a-scaffold` into `main` (`--no-ff`).
+Run `make review`, then merge `feat/a5-bootstrap-health-makereview` into `main` (`--no-ff`).
