@@ -185,6 +185,27 @@ deliberate, reviewable progression; this file holds the reasoning, commit messag
 
 > Appended as each ticket lands: **goal · decision · why · tradeoff · outcome**.
 
+### A2 — TypeScript, Nest & Jest config
+
+- **Goal:** wire the compiler, the Nest CLI build, and the Jest test harness so later tickets
+  have a type-safe environment and a runnable test runner from the start.
+- **Decision:** `tsconfig.json` targets ES2022 / commonjs with `strict`, `experimentalDecorators`,
+  and `emitDecoratorMetadata` (required by Nest's DI). `tsconfig.build.json` inherits and
+  excludes `test/` and `*.spec.ts` so `nest build` only compiles production code.
+  `nest-cli.json` sets `sourceRoot: src` and `deleteOutDir: true`.
+  `jest.config.js` uses `ts-jest`, roots at `src/`, `passWithNoTests: true`.
+- **Why `passWithNoTests`:** the test runner must be callable on an empty tree without signalling
+  false failure — tests accumulate ticket-by-ticket.
+- **Stub `src/app.module.ts`:** TypeScript throws `TS18003` (no input files found) when the
+  `include` paths exist but contain no `.ts` files. A minimal `@Module({}) AppModule` satisfies
+  the compiler; A5 will flesh it out.
+- **Tradeoff:** `baseUrl: "./"` is deprecated in TypeScript 7 (IDE warning visible in TS
+  language server); `tsc` 5.7 treats it as informational only and exits 0. The spec requires
+  it for the module-resolution pattern used later — no action taken.
+- **Outcome:** `tsconfig.json`, `tsconfig.build.json`, `nest-cli.json`, `jest.config.js`,
+  `src/app.module.ts` stub, `src/` and `test/` directory scaffolds.
+  `npm run typecheck` exits 0; `npx jest` exits 0 (no tests).
+
 ### A1 — Scaffolding files (`.gitignore`, `package.json`, README skeleton)
 
 - **Goal:** lay down the project manifest and ignore rules so the repo is installable and
