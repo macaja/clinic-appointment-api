@@ -71,7 +71,13 @@ The system is structured in three layers:
 
 **Race condition: `BEGIN IMMEDIATE` check-then-insert**
 Acquires the SQLite write lock before the overlap check runs — a concurrent writer must wait and then re-reads the freshly inserted row, getting a 409.
-The trade-off: there is latency between the lock acquisition and the write. Under high concurrency this becomes a serialization bottleneck. For PostgreSQL the right move is `EXCLUDE USING gist` (range overlap constraint) or `SELECT ... FOR UPDATE` — both eliminate the window and scale better.
+The trade-off: SQLite's locking is database-wide (not row-level), so all writes are serialized globally. Under high concurrency this becomes a bottleneck. For PostgreSQL the right move is `EXCLUDE USING gist` (range overlap constraint) or advisory locks — both eliminate the window and scale better.
+
+**Past appointment check has a small TOCTOU window**
+The `start >= now` guard runs in the use case before the insert. A few milliseconds can elapse between the check and the actual write, so a booking right at the boundary could slip through as a past appointment. In practice this is negligible — clinic bookings happen hours or days ahead — but the gap exists.
+
+**Clinician/patient auto-create is idempotent with SQLite**
+`INSERT OR IGNORE` is safe here because SQLite serializes all writes through a single process. With PostgreSQL, two concurrent requests for the same new `clinicianId` could both pass the existence check before either inserts, causing a unique constraint violation — the correct pattern there is to handle the constraint error or use `INSERT ... ON CONFLICT DO NOTHING`.
 
 **No real auth**
 `X-Role` is a convenience shim. No JWT verification, no session management, no multi-tenant isolation.
@@ -80,9 +86,10 @@ The trade-off: there is latency between the lock acquisition and the write. Unde
 
 ## Future improvements
 
+- **Replace SQLite with a concurrent database** — SQLite is single-writer and file-based, which makes it unsuitable for horizontal scaling or high-concurrency workloads. PostgreSQL (with `EXCLUDE USING gist` for range overlap or `SELECT ... FOR UPDATE`) is the natural next step.
+- **Move overlap check to the use case** — currently `createOverlapSafe` in the repository handles both the overlap logic and the insert. A cleaner split would have the use case fetch upcoming appointments for the clinician and call `TimeRange.overlaps()` directly, then delegate to a plain `create` on the repository. The port would then expose only `create`, `findUpcomingByClinician`, and `findAllUpcoming`.
 - **Claude Code tooling** — invest more in skills, guidelines, and workflows so the agent is more reliable. There were moments of hallucination and cases where it skipped obvious steps (e.g. git commits without the expected skill).
 - **Observability** — add Datadog traces / structured logging on the request path and the transaction boundary.
-- **Race condition depth** — document the latency window more explicitly and consider a stress-test harness to measure saturation under load.
 - **Real auth** — JWT verification, role extraction from claims, multi-tenant scoping.
 - **Missing CRUD** — appointment cancellation/rescheduling, clinician/patient management endpoints.
 - **Pagination** — clinician listing currently returns all rows.
