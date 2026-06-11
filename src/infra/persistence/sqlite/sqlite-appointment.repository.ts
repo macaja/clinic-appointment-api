@@ -27,7 +27,7 @@ const rowToAppointment = (row: AppointmentRow): Appointment =>
   });
 
 export class SqliteAppointmentRepository implements AppointmentRepository {
-  private readonly clashStmt: Database.Statement;
+  private readonly candidatesStmt: Database.Statement;
   private readonly insertStmt: Database.Statement;
   private readonly findByClinicianStmt: Database.Statement;
   private readonly findByClinicianWithToStmt: Database.Statement;
@@ -35,8 +35,8 @@ export class SqliteAppointmentRepository implements AppointmentRepository {
   private readonly findAllWithToStmt: Database.Statement;
 
   constructor(private readonly db: Database.Database) {
-    this.clashStmt = db.prepare(
-      'SELECT 1 FROM appointment WHERE clinicianId = ? AND startUtc < ? AND endUtc > ? LIMIT 1',
+    this.candidatesStmt = db.prepare(
+      'SELECT * FROM appointment WHERE clinicianId = ? AND endUtc > ? AND startUtc < ?',
     );
     this.insertStmt = db.prepare(
       'INSERT INTO appointment (id, clinicianId, patientId, startUtc, endUtc, createdAt) VALUES (@id, @clinicianId, @patientId, @startUtc, @endUtc, @createdAt)',
@@ -57,7 +57,14 @@ export class SqliteAppointmentRepository implements AppointmentRepository {
 
   async createOverlapSafe(appt: Appointment): Promise<Appointment> {
     const txn = this.db.transaction((a: Appointment) => {
-      const clash = this.clashStmt.get(a.clinicianId, a.range.endMs, a.range.startMs);
+      const candidates = this.candidatesStmt.all(
+        a.clinicianId,
+        a.range.startMs,
+        a.range.endMs,
+      ) as AppointmentRow[];
+      const clash = candidates.some((row) =>
+        new TimeRange(row.startUtc, row.endUtc).overlaps(a.range),
+      );
       if (clash) throw new OverlapError();
       this.insertStmt.run({
         id: a.id,
