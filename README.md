@@ -87,7 +87,6 @@ The `start >= now` guard runs in the use case before the insert. A few milliseco
 ## Future improvements
 
 - **Replace SQLite with a concurrent database** — SQLite is single-writer and file-based, which makes it unsuitable for horizontal scaling or high-concurrency workloads. PostgreSQL (with `EXCLUDE USING gist` for range overlap or `SELECT ... FOR UPDATE`) is the natural next step.
-- **Move overlap check to the use case** — currently `createOverlapSafe` in the repository handles both the overlap logic and the insert. A cleaner split would have the use case fetch upcoming appointments for the clinician and call `TimeRange.overlaps()` directly, then delegate to a plain `create` on the repository. The port would then expose only `create`, `findUpcomingByClinician`, and `findAllUpcoming`.
 - **Claude Code tooling** — invest more in skills, guidelines, and workflows so the agent is more reliable. There were moments of hallucination and cases where it skipped obvious steps (e.g. git commits without the expected skill).
 - **Observability** — add Datadog traces / structured logging on the request path and the transaction boundary.
 - **Real auth** — JWT verification, role extraction from claims, multi-tenant scoping.
